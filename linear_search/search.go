@@ -1,4 +1,4 @@
-package linearSearch
+package linear_search
 
 func Search(datalist []int, targ int) int {
 	for idx, val := range datalist {

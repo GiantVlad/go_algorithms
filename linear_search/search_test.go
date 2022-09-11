@@ -1,4 +1,4 @@
-package linearSearch
+package linear_search
 
 import (
 	"github.com/stretchr/testify/assert"
