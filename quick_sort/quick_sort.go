@@ -6,10 +6,10 @@ func QSort(list []int) {
 	if len(list) < 2 {
 		return
 	}
-	mid := rand.Int() % len(list)
+	pivot := rand.Int() % len(list)
 
 	left, right := 0, len(list)-1
-	list[right], list[mid] = list[mid], list[right]
+	list[right], list[pivot] = list[pivot], list[right]
 
 	for i, _ := range list {
 		if list[i] < list[right] {
