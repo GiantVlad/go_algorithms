@@ -1,14 +1,25 @@
 package inserting_sort
 
 func InsSort(list []int) {
-	k := 0
-	for i, _ := range list {
-		k = i - 1
-		for k > -1 {
-			if list[k+1] < list[k] {
-				list[k], list[k+1] = list[k+1], list[k]
+	for i := 1; i < len(list); i++ {
+		j := i - 1
+	inserted:
+		for j > -1 {
+			if list[i] > list[j] {
+				insert(list, i, j+1)
+				break inserted
 			}
-			k--
+			if j == 0 {
+				insert(list, i, j)
+				break inserted
+			}
+			j--
 		}
+	}
+}
+
+func insert(list []int, from int, to int) {
+	for i := from; i > to; i-- {
+		list[i-1], list[i] = list[i], list[i-1]
 	}
 }
