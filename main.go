@@ -2,15 +2,12 @@ package main
 
 import (
 	"fmt"
-	"linearSearch/linear_search"
+	"linearSearch/hanoi_tower"
 )
 
 func main() {
-	items := []int{95, 78, 46, 58, 45, 86, 99, 251, 320}
-	idx := linear_search.Search(items, 58)
-	if idx > -1 {
-		fmt.Printf("Found element, idx: %d", idx)
-		return
-	}
-	fmt.Println("Not found")
+	beadNum := 5 // This is the initial number of beads
+	fmt.Printf("This is a Hannukah game with %d beads \n\r", beadNum)
+	count := hanoi_tower.Hanoi(beadNum, "A", "B", "C")
+	fmt.Printf("Game over: %d steps spent in total \n\r", count)
 }
